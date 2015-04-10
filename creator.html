@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC>
+<html>
+<head>
+ <script type="text/javascript" src="creator.js"></script>
+ <style>
+ table, tr, td {border:1px solid black;}
+ </style>
+ <title>Matching creator</title>
+</head>
+<body onLoad="loaded()">
+ <h1>Create matching HTML</h1>
+ Background color: <input type="text" style="width:100px" value="#4400AA" id="bgcolor" /><br />
+ Text color (+ table border color): <input type="text" style="width:100px" value="white" id="txtcolor" /><br />
+ Quiz name: <input type="text" style="width:400px" value="" id="titlename" /><br /> <br />
+ <input type="hidden" id="countEntries" value="0" />
+ Add matching elements:
+ <table style="width:600px;" id="mytable">
+ <tr>
+  <th style="width:150px">Term</th>
+  <th style="width:450px">Description</th>
+ </tr></table>
+ <br /> <button onClick="addEntry()">Add</button> to add a new term to test <br />
+ Randomize order? <input type="checkbox" id="randomize" /> <br />
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <button onClick="create()">Create!</button>
+ 
+ 
+ <br /><h3>Output will be put here.</h3>
+ <textarea style="width:600px;height:400px;" id="outputarea"></textarea>
+</body>
+</html>
