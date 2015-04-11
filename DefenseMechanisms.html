@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="matching.css" />
+<title>Psychoanalysis: Defense Mechanisms</title><style>
+body
+{
+background-color:#4400AA;
+color:white;
+}
+div.tablecont
+{
+border: 1px solid white;
+}
+</style>
+<script type = "text/javascript">
+function clear_all()
+{
+var allAttributes=["A", "B", "C", "D", "E", "F", "H", "I", "J"];
+for(var i=0;i<allAttributes.length;++i)
+{
+document.getElementById(allAttributes[i]+"_out").value="";
+document.getElementById(allAttributes[i]+"_in").value="";
+document.getElementById(allAttributes[i]+"_ta").style.backgroundColor="transparent";
+document.getElementById(allAttributes[i]+"_tb").style.backgroundColor="transparent";
+document.getElementById(allAttributes[i]+"_tc").style.backgroundColor="transparent";
+}
+}
+function return_ans(input)
+{
+var ans = [];
+ans['A'] = 3;
+ans['B'] = 2;
+ans['C'] = 4;
+ans['D'] = 8;
+ans['E'] = 9;
+ans['F'] = 1;
+ans['H'] = 6;
+ans['I'] = 7;
+ans['J'] = 5;
+return ans[input];
+}
+function return_name(input)
+{
+var nom=[];
+nom[1] = "Denial";
+nom[2] = "Reaction Formation";
+nom[3] = "Rationalization";
+nom[4] = "Intellectualization";
+nom[5] = "Projecting";
+nom[6] = "Sublimation";
+nom[7] = "Repression";
+nom[8] = "Displacement";
+nom[9] = "Regression";
+nom[10] = "";
+return nom[input];
+}
+function checkans(a)
+{
+var idClass = a.id.substr(0, a.id.length-3);
+if(return_ans(idClass) == a.value)
+{
+document.getElementById(idClass+"_out").value=return_name(return_ans(idClass));
+document.getElementById(idClass+"_ta").style.backgroundColor="transparent";
+document.getElementById(idClass+"_tb").style.backgroundColor="transparent";
+document.getElementById(idClass+"_tc").style.backgroundColor="transparent";
+}
+else
+{
+document.getElementById(idClass+"_out").value="";
+document.getElementById(idClass+"_ta").style.backgroundColor="red";
+document.getElementById(idClass+"_tb").style.backgroundColor="red";
+document.getElementById(idClass+"_tc").style.backgroundColor="red";
+}
+}
+</script>
+</head>
+<body onLoad="clear_all();">
+<div class = "contain">
+<h1>Psychoanalysis: Defense Mechanisms</h1>
+<div class="indentabit">
+<div class="tablecont" style="width:520px;font-weight:900;">
+<span class="center">WORD BANK</span>
+1. Denial<br />
+2. Reaction Formation<br />
+3. Rationalization<br />
+4. Intellectualization<br />
+5. Projecting<br />
+6. Sublimation<br />
+7. Repression<br />
+8. Displacement<br />
+9. Regression
+</div>
+</div>
+<br class="clear"/>
+<div class="tablecont">
+<table style="width:650px;1px solid white;">
+<tr>
+<th style="width:400px"> Prompt </th>
+<th style="width:50px"> Answer </th>
+<th style="width:200px"> Feedback </th>
+</tr><tr>
+<td id="A_ta"> Coming up with a beneficial result from the incident</td>
+<td id="A_tb"> <input type="text" style="width:40px;" id="A_in" onBlur="checkans(this)" /> </td>
+<td id="A_tc"> <input type="text" style="width:190px;" id="A_out" onFocus="blur()" /> </td>
+</tr><tr>
+<td id="B_ta"> Expressing the opposite of how one feels</td>
+<td id="B_tb"> <input type="text" style="width:40px;" id="B_in" onBlur="checkans(this)" /> </td>
+<td id="B_tc"> <input type="text" style="width:190px;" id="B_out" onFocus="blur()" /> </td>
+</tr><tr>
+<td id="C_ta"> Undertaking an academic study of the topic or incident</td>
+<td id="C_tb"> <input type="text" style="width:40px;" id="C_in" onBlur="checkans(this)" /> </td>
+<td id="C_tc"> <input type="text" style="width:190px;" id="C_out" onFocus="blur()" /> </td>
+</tr><tr>
+<td id="D_ta"> Redirecting feelings from the subject to something or someone else</td>
+<td id="D_tb"> <input type="text" style="width:40px;" id="D_in" onBlur="checkans(this)" /> </td>
+<td id="D_tc"> <input type="text" style="width:190px;" id="D_out" onFocus="blur()" /> </td>
+</tr><tr>
+<td id="E_ta"> Reverting to a earlier or more comfortable state or behavior</td>
+<td id="E_tb"> <input type="text" style="width:40px;" id="E_in" onBlur="checkans(this)" /> </td>
+<td id="E_tc"> <input type="text" style="width:190px;" id="E_out" onFocus="blur()" /> </td>
+</tr><tr>
+<td id="F_ta"> Refusing to believe the truth</td>
+<td id="F_tb"> <input type="text" style="width:40px;" id="F_in" onBlur="checkans(this)" /> </td>
+<td id="F_tc"> <input type="text" style="width:190px;" id="F_out" onFocus="blur()" /> </td>
+</tr><tr>
+<td id="H_ta"> The healthiest defense mechanism, channeling frustrations to a different goal</td>
+<td id="H_tb"> <input type="text" style="width:40px;" id="H_in" onBlur="checkans(this)" /> </td>
+<td id="H_tc"> <input type="text" style="width:190px;" id="H_out" onFocus="blur()" /> </td>
+</tr><tr>
+<td id="I_ta"> Blocking out and avoiding thoughts related to the subject</td>
+<td id="I_tb"> <input type="text" style="width:40px;" id="I_in" onBlur="checkans(this)" /> </td>
+<td id="I_tc"> <input type="text" style="width:190px;" id="I_out" onFocus="blur()" /> </td>
+</tr><tr>
+<td id="J_ta"> Believeing that someone else has the same feeings as you do</td>
+<td id="J_tb"> <input type="text" style="width:40px;" id="J_in" onBlur="checkans(this)" /> </td>
+<td id="J_tc"> <input type="text" style="width:190px;" id="J_out" onFocus="blur()" /> </td>
+ </tr></table>
+</div>
+<br class="clear" />
+<button onClick="clear_all()" > CLEAR </button>
+</div>
+</body>
+</html>

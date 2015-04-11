@@ -3,14 +3,20 @@
 <head>
  <script type="text/javascript" src="creator.js"></script>
  <style>
- table, tr, td {border:1px solid black;}
+ table, tr, td {border:1px solid white;}
+ body
+ {
+  background-color:#4400AA;
+  color:white;
+ }
  </style>
  <title>Matching creator</title>
 </head>
 <body onLoad="loaded()">
  <h1>Create matching HTML</h1>
- Background color: <input type="text" style="width:100px" value="#4400AA" id="bgcolor" /><br />
- Text color (+ table border color): <input type="text" style="width:100px" value="white" id="txtcolor" /><br />
+ Background color: <input type="text" style="width:100px" value="#4400AA" id="bgcolor" onBlur="bgcol()" /><br />
+ Text color (+ table border color): <input type="text" style="width:100px" value="white" id="txtcolor" onBlur="txtcol()" /><br />
+ <span style="background-color:red" id="errorbox">Error color: <input type="text" style="width:100px" value="red" onBlur="errorcol()" id="errorcolor" /></span><br />
  Quiz name: <input type="text" style="width:400px" value="" id="titlename" /><br /> <br />
  <input type="hidden" id="countEntries" value="0" />
  Add matching elements:
