@@ -28,10 +28,39 @@ function addEntry()
 // alert("here");
  var table=document.getElementById("mytable");
  var row=table.insertRow(entrycount);
- var cell1 = row.insertCell(0);
- var cell2 = row.insertCell(1);
- cell1.innerHTML = "<input type=\"text\" style=\"width:140px\" id=\"t_" + entrycount + "\" />";
- cell2.innerHTML = "<input type=\"text\" style=\"width:440px\" id=\"d_" + entrycount + "\" />";
+ var cell0 = row.insertCell(0);
+ var cell1 = row.insertCell(1);
+ var cell2 = row.insertCell(2);
+ var cell3 = row.insertCell(3);
+ var cell4 = row.insertCell(4);
+ cell0.innerHTML = entrycount;
+ cell1.innerHTML = "<input type=\"text\" style=\"width:130px\" id=\"t_" + entrycount + "\" />";
+ cell2.innerHTML = "<input type=\"text\" style=\"width:410px\" id=\"d_" + entrycount + "\" />";
+ if(entrycount > 1)
+ {
+  cell3.innerHTML = "<input type=\"checkbox\" id=\"c_" + entrycount + "\" onChange=\"csel(" + entrycount + ")\" />";
+  var selectbox = " <select id=\"n_" + entrycount + "\" disabled=\"disabled\">";
+  for(var i=1;i<entrycount;++i)
+  {
+   selectbox += "<option value=\"" + i + "\">" + i + "</option>";
+  }
+  cell4.innerHTML = selectbox;
+ }
+}
+
+function csel(input)
+{
+ var is_checked = document.getElementById("c_" + input).checked;
+ if(is_checked)
+ {
+  document.getElementById("n_" + input).disabled=false;
+  document.getElementById("t_" + input).disabled=true;
+ }
+ else
+ {
+  document.getElementById("n_" + input).disabled=true;
+  document.getElementById("t_" + input).disabled=false;
+ }
 }
 
 function reorder_array(input)
